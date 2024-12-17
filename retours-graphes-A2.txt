@@ -1,0 +1,12 @@
+Vous avez réussi à proposer des modélisations, même si pas toujours correctes.
+Malheureusement le rapport ne permet pas de les comprendre, c'est dommage.
+Si dans le rapport vous aviez fait des dessins de graphes, on aurait tout de suite compris ce que vous faites.
+Je veux bien essayer de comprendre quel est le graphe depuis la description textuelle, mais celle-ci ne correspond pas toujours à un graphe correct. Par ex. pour la V1, que veut-dire la présence de deux valeurs pour l'arête C->D ? 
+
+Pour la V1, vous créez bien un graphe ne contenant que les arêtes pour une modalité de transport donnée. Mais le rapport ne le dit pas explicitement.
+
+Pour la V2, il n'est pas clair comment sont ajoutés les couts de correspondance. Apparemment vous les ajoutez sur le chemin déjà calculé. Cette méthode ne permet pas de trouver facilement les meilleurs chemins, car l'ajout des temps de correspondance peut modifier fortement le cout d'un chemin.
+
+Pour la V3, apparemment vous faites une pondération des couts des chemins. Cette solution est inutilement complexe, il suffit de pondérer les poids des arêtes, obtenant ainsi un graphe unique dans lequel on calcule les plus courts chemins.
+
+Pourquoi ne pas avoir indiqué dans le rapport où se trouve l'implémentation ? Je comprends que vous avez travaillé à 2, voire Martin quasiment tout seul, et dans ces conditions on n'a pas le temps de faire tout ce qui est demandé. Dans ce cas il faut expliquer votre situation et donner toutes les informations qui pourraient permettre d'évaluer votre travail. Par ex., vous auriez pu indiquer le nom de la classe où on trouve la construction du graphe, même si ce n'est pas une classe de test exactement comme demandé.

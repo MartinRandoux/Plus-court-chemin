@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <left>
+      <VBox prefHeight="800.0" prefWidth="300.0" style="-fx-border-color: grey;" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <VBox prefHeight="150.0" prefWidth="300.0" style="-fx-border-color: grey;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="300.0" spacing="30.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ville de Départ:" />
+                        <ComboBox fx:id="cbVilleDepart" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="300.0" spacing="30.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ville D'arrivée:" />
+                        <ComboBox fx:id="cbVilleArrive" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-border-color: grey;">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <ImageView fx:id="ivTemps" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Durée Max">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                           <children>
+                              <Slider fx:id="sliderCritTemps" max="200.0" onMouseDragged="#modifSliderCritTemps" prefWidth="195.0" value="100.0" />
+                              <TextField fx:id="tfCritTemps" alignment="CENTER" onAction="#modifTfCritTemps" prefWidth="95.0" text="100" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0" spacing="50.0">
+                           <children>
+                              <ImageView fx:id="ivPrix" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Max">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0">
+                           <children>
+                              <Slider fx:id="sliderCritPrix" max="200.0" onMouseDragged="#modifSliderCritPrix" prefWidth="195.0" value="100.0" />
+                              <TextField fx:id="tfCritPrix" alignment="CENTER" onAction="#modifTfCritPrix" prefWidth="95.0" text="100" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="280.0" prefWidth="300.0" style="-fx-border-color: grey;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" spacing="15.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="300.0" text="Critère">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="cbCritere" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="300.0" text="Critères de préférences">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="30.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Durée" />
+                        <Slider fx:id="sliderPrefTemps" showTickLabels="true" showTickMarks="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="41.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                        <Slider fx:id="sliderPrefPrix" showTickLabels="true" showTickMarks="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="38.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CO2" />
+                        <Slider fx:id="sliderPrefCo2" showTickLabels="true" showTickMarks="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="300.0" style="-fx-border-color: grey;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="300.0" text="Utiliser un seul transport">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="30.0">
+                     <children>
+                        <CheckBox fx:id="simpleModalite" mnemonicParsing="false" onAction="#modifierSimpleModaliteTransport" />
+                        <ChoiceBox fx:id="cbSimpleModalite" disable="true" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="90.0" prefWidth="300.0" style="-fx-border-color: grey;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#rechercherButton" prefHeight="30.0" prefWidth="150.0" text="Rechercher">
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox fx:id="vbHistorique" prefHeight="800.0" prefWidth="125.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnOuvrirHistorique" mnemonicParsing="false" onAction="#ouvrirFermerHistorique" text="Ouvrir l'historique">
+               <VBox.margin>
+                  <Insets left="5.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <VBox fx:id="conteneurHistorique" prefHeight="250.0" prefWidth="300.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="lblHistorique1" onMouseClicked="#rechercheHistorique1" prefHeight="50.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblHistorique2" onMouseClicked="#rechercheHistorique2" prefHeight="50.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblHistorique3" onMouseClicked="#rechercheHistorique3" prefHeight="50.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblHistorique4" onMouseClicked="#rechercheHistorique4" prefHeight="50.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblHistorique5" onMouseClicked="#rechercheHistorique5" prefHeight="50.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="600.0" prefWidth="600.0">
+               <children>
+                  <VBox fx:id="vbAffichageTrajet" prefHeight="600.0" prefWidth="300.0">
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <Pane prefHeight="200.0" prefWidth="474.0">
+                     <children>
+                        <StackPane layoutX="71.0" layoutY="103.0" prefHeight="200.0" prefWidth="300.0">
+                           <children>
+                              <Ellipse fx:id="ePoidAffichage" fill="DODGERBLUE" radiusX="130.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label fx:id="lblAffichagePoids" text="Label">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <TitledPane prefHeight="200.0" rotate="180.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="174.0" prefWidth="767.0" rotate="180.0">
+                     <children>
+                        <HBox layoutX="2.0" prefHeight="174.0" prefWidth="767.0">
+                           <children>
+                              <VBox prefHeight="174.0" prefWidth="384.0">
+                                 <children>
+                                    <Label fx:id="lblAutreTrajet1" onMouseClicked="#changerAffichage1" prefHeight="87.0" prefWidth="384.0" text="Label">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblAutreTrajet2" onMouseClicked="#changerAffichage2" prefHeight="87.0" prefWidth="384.0" text="Label">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="174.0" prefWidth="383.0">
+                                 <children>
+                                    <Label fx:id="lblAutreTrajet3" onMouseClicked="#changerAffichage3" prefHeight="87.0" prefWidth="384.0" text="Label">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblAutreTrajet4" onMouseClicked="#changerAffichage4" prefHeight="87.0" prefWidth="384.0" text="Label">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
